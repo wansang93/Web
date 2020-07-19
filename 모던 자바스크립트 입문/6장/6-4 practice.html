@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate BMI</title>
+    <script>
+        window.onload = function() {
+            document.getElementById("button").onclick = function() {
+                var h = parseFloat(document.getElementById("height").value);
+                var w = parseFloat(document.getElementById("weight").value);
+                var bmi = document.getElementById("bmi");
+                bmi.innerHTML = (w/h/h).toFixed(1);
+            };
+        };
+    </script>
+</head>
+<body>
+    <p>키: <input type="number" id="height"> m</p>
+    <p>몸무게: <input type="number" id="weight"> kg</p>
+    <p>당신의 체질량 지수는 <output id="bmi">?</output> 입니다.</p>
+    <input type="button" id="button" value="계산">
+</body>
+</html>
+
+<!-- 
+1. 숫자를 받는 number 2개와 출력할 out 을 받는다.
+2. 클릭하면 실행할 버튼을 만든다.
+
+3. <script>(JS)로 넘어간다.
+
+4. window.onload = function() {...} 을 통해 동적으로 할당 받습니다.
+5. getElementID로 버튼을 불러와서 버튼함수를 작성합니다.
+6. 계산하고 bmi 값을 innerHTML 함수로 수정합니다.
+ -->
