@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤년</title>
+    <script>
+        window.onload = function() {
+            var button = document.getElementById("button");
+            var result = document.getElementById("result");
+            button.onclick = function() {
+                var year = parseInt(document.getElementById("year").value);
+                if( (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)) ) {
+                    return result.innerHTML = "해당 년도는 윤년이 맞습니다.";
+                }
+                return result.innerHTML = "해당 년도는 윤년이 아닙니다.";
+            };
+        };
+    </script>
+</head>
+<body>
+    <p>년도를 입력하세요: <input type="number" id="year"></p>
+    <p id="result">해당 년도는 _____ ____니다.</p>
+    <input type="button" id="button" value="윤년 확인하기">
+</body>
+</html>
