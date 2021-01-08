@@ -57,7 +57,7 @@
 
 ```html
 <!-- 크롬으로 출력은 되지만 유효성 검사를 하면 Error 발생 -->
-<span><h1>블록 레벨 요소</h1></span>
+<span><h1>유효성 검사시 실패</h1></span>
 ```
 
 ## 1.4 기본 요소
@@ -113,13 +113,14 @@ HTML 문서의 소유자나 조직에 대한 연락처 정보를 정의할 때 �
 
 링크를 연결해주는 태그, HTML의 꽃
 
-`target` 속성값
-- `_self`: 자기 자신(기본값)
-- `_blank`: 빈 페이지
-- `_parent`: 부모창
-- `_top`: 가장 상위 창
+- `href`: 링크 경로
+- `target` 속성: 링크를 열었을 때 어디에 표시할지 결정
+  - `_self`: 자기 자신(기본값)
+  - `_blank`: 빈 페이지
+  - `_parent`: 부모창
+  - `_top`: 가장 상위 창
 
-`title`: 링크 미리보기
+- `title`: 링크 설명
 
 ```html
 <!-- 외부 링크 가기 -->
@@ -153,23 +154,118 @@ HTML 문서의 소유자나 조직에 대한 연락처 정보를 정의할 때 �
 <div id="container">메인 콘텐츠</div>
 ```
 
-### 1.4.5 이미지 `<img>`
+### 1.4.5 이미지 `<img>`, `<map>`
+
+- `src` 속성: 이미지 경로를 지정
+- `alt` 속성이 필요한 이유
+  - 스크린 리더(음성낭독프로그램)에서 img 태그로 접근시 음성으로 읽어줌
+  - 외부적 환경으로 이미지를 불러올수 없을 때 텍스트로 출력되 내용 전달 가능
+  - 만약 내용 전달할 필요가 없는 경우 아래 같이 정의해도 됨
+
+```html
+<h1><img src="images/logo.png" alt="아이콕스"></h1>
+<a href="#"><img src="images/whitestar.jpg" alt="화이트스타"></a>
+<img src="icon.png" alt>
+```
+
+`<map>` 태그: 하나의 이미지에 여러 개의 링크가 적용되어야 하는 경우
+
+```html
+<img src="images/map.jpg" alt="웹도서관" usemap="#library">
+<map name="library">
+    <!-- rect(사각형): x1, y1, x2, y2
+    circle(원): x1, y1, 반지름
+    ploy(다각형): 각 꼬지점의 좌표값들 -->
+    <area shape="rect" coords="48,10,290,132" href="#" alt="A관" target="_blank">
+    <area shape="circle" coords="330,200,10" href="#" alt="B관" target="_blank">
+    <area shape="poly" coords="10,10,20,20,10,30" href="#" alt="B관" target="_blank">
+</map>
+```
 
 ## 1.5 텍스트 관련 요소
 
-- `<em>`: 
-- `<strong>`: 
-- `<mark>`: 
-- `<b>`: 
-- `<small>`: 
-- `<sub>`: 
-- `<sup>`: 
+- `<em>`: 기울임체 -> 강조, 문맥 의미 변화 가능
+- `<strong>`: 굵은체 -> 중요, 문맥 의미 변화x, 일반적으로 중요한 단어 강조
+- `<mark>`: 노란색 표시 -> 주의 깊게 볼 텍스트 강조
+- `<b>`: 굵은체 -> 안중요
+- `<small>`: 작은글씨로 표현 -> 주의 사항, 법적 제한, 저작권 등 정의
+- `<sub>`: 아래첨자
+- `<sup>`: 윗첨자
 
-## 1.6 목록 관련 요소
+문장에서 특정 단에 대한 강조나 중요 의미가 아니라 단순히 기울임체, 굵은체 표시하고 싶으면 CSS 이용
 
-- `<ol>`: 
-- `<ul>`: 
-- `<dl>`: 
+```css
+.txt1{font-weight: bold;}
+.txt2{font-style: italic;}
+```
+
+```html
+<p>웹페이지 제작 시 <em>웹표준</em>과 웹접근성을 준수합니다.</p>
+<p>웹페이지 제작 시 <strong>웹표준</strong>과 <strong>웹접근성</strong>을 준수합니다.</p>
+<p>웹페이지 제작 시 <mark>웹표준</mark>과 웹접근성을 준수합니다.</p>
+<p><b><span>웹페이지</span></b> 제작 시 웹표준과 웹접근성을 준수합니다.</p>
+<p><small>COPYRIGHT © All rights reserved.</small></p>
+<p>물의 화학식은 H<sub>2</sub>O입니다.</p>
+<p>100m<sup>2</sup></p>
+```
+
+## 1.6 목록 관련 요소 `<ol>`, `<ul>`, `<li>`, `<dl>`, `<dt>`, `<dd>`
+
+`<ol>`: Order list, 순서 정의
+- 자식 요소로 반드시 `<li>` 태그를 정의, 다른 태그는 자식 요소로 불가
+
+```html
+<ol>
+    <li>html</li>
+    <li>css</li>
+    <li>javascript</li>
+</ol>
+```
+
+`<ul>`: Unorder list, 순서 비정의
+- 자식 요소로 반드시 `<li>` 태그를 정의, 다른 태그는 자식 요소로 불가
+
+```html
+<ul>
+    <li><a href="#">메뉴1</a>
+        <ul><!--메뉴1의 서브메뉴-->
+            <li><a href="#">메뉴1_1</a></li>
+            <li><a href="#">메뉴1_2</a></li>
+            <li><a href="#">메뉴1_3</a></li>
+        </ul>
+    </li>
+    <li><a href="#">메뉴2</a>
+        <ul><!--메뉴2의 서브메뉴-->
+            <li><a href="#">메뉴2_1</a></li>
+            <li><a href="#">메뉴2_2</a></li>
+            <li><a href="#">메뉴2_3</a></li>
+        </ul>
+    </li>
+    <li><a href="#">메뉴3</a>
+        <ul><!--메뉴3의 서브메뉴-->
+            <li><a href="#">메뉴3_1</a></li>
+            <li><a href="#">메뉴3_2</a></li>
+            <li><a href="#">메뉴3_3</a></li>
+        </ul>
+    </li>
+</ul>
+```
+
+`<dl>`: Discription List, 설명 목록을 정의
+- 자식 요소로 반드시 `<dt>`, `<dd>`를 정의해야 함
+- 다른 태그는 자식 요소로 올 수 없지만 `<div>` 태그는 예외적으로 올 수 있음
+- `<div>` 태그는 `<dt>`, `<dd>`를 한쌍으로 묶기만 가능
+
+```html
+<dl>
+    <dt>html</dt>
+    <dd>Hypertext Markup Language</dd>
+    <dd>version html4.0, xhtml1.0, html5</dd>
+    <dt>css</dt>
+    <dd>cascading style sheets</dd>
+    <dd>version css2, css3</dd>
+</dl>
+```
 
 ## 1.7 표 관련 요소 및 속성
 

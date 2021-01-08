@@ -8,8 +8,144 @@
 </head>
 
 <body>
+    <h1>블록 레벨 요소</h1>
+    <h2>블록 레벨 요소 성질</h2>
+    <p>줄 바꿈이 생깁니다.</p>
+
+    <hr>
+
+    <strong>인라인 요소</strong>
+    <span>인라인 요소는 한 줄로 출력됩니다.</span>
+
+    <hr>
+
+    <!-- 크롬으로 출력은 되지만 유효성 검사를 하면 Error 발생 -->
+    <span>
+        <h1>유효성 검사시 실패</h1>
+    </span>
+
+    <hr>
+
+    <h1>반응형 웹사이트 제작1</h1>
+    <h2>반응형 웹사이트 제작2</h2>
+    <h3>반응형 웹사이트 제작3</h3>
+    <h4>반응형 웹사이트 제작4</h4>
+    <h5>반응형 웹사이트 제작5</h5>
+    <h6>반응형 웹사이트 제작6</h6>
+
+    <hr>
+
+    <p>p 요소는 텍스트와 인라인 요소를 포함할 수 있지만 같은 블록 요소는
+        포함할 수 없습니다.</p>
+    <p>p 요소는 텍스트와 인라인 요소를 포함할 수 있지만 같은 블록 요소는<br>포함할 수 없습니다.</p>
+
+    <hr>
+
+    <pre>
+    p 요소는 텍스트와 인라인 요소를 포함할 수 있지만
+        같은 블록 요소는
+            포함할 수 없습니다.
+    </pre>
+
+    <hr>
+
+    <address>
+        서울특별시 영등포구 당산2동 <br>
+        이메일 : <a href="mailto:w******93@naver.com">w******93@naver.com</a> <br>
+        전화번호 : 010-****-****
+    </address>
+
+    <hr>
+
+    <!-- 외부 링크 가기 -->
+    <a href="http://icoxpublish.com/">아이콕스</a>
+    <!-- 이메일 주소 링크 방법 -->
+    <a href="mailto:icoxpub@naver.com">icoxpub@naver.com</a>
+    <!-- 웹 최상단으로 이동 -->
+    <a href="#">
+        <!-- 블록 레벨 요소도 포함할 수 있음 -->
+        <section>
+            <h2>새로나온책</h2>
+            <p>반응형 웹퍼블리싱</p>
+        </section>
+    </a>
+    <!-- 내부 링크 가기 -->
+    <a href="#content">본문바로가기</a>
+
+    <hr>
+
     <a href="http://icoxpublish.com" target="_blank">아이콕스</a>
-    <a href="#" onclick="window.open('http://icoxpublish.com'); return false" title="새 창">아이콕스</a>
+    <!--  -->
+    <a href="#" onclick="window.open( 'http://icoxpublish.com' ); return false" title="새 창">아이콕스</a>
+
+    <hr>
+
+    <h1><img src="images/logo.png" alt="아이콕스"></h1>
+    <a href="#"><img src="images/whitestar.jpg" alt="화이트스타"></a>
+    <img src="icon.png" alt>
+
+    <hr>
+
+    <img src="images/map.jpg" alt="웹도서관" usemap="#library">
+    <map name="library">
+        <!-- rect(사각형): x1, y1, x2, y2
+    circle(원): x1, y1, 반지름
+    ploy(다각형): 각 꼬지점의 좌표값들 -->
+        <area shape="rect" coords="48,10,290,132" href="#" alt="A관" target="_blank">
+        <area shape="circle" coords="330,200,10" href="#" alt="B관" target="_blank">
+        <area shape="poly" coords="10,10,20,20,10,30" href="#" alt="B관" target="_blank">
+    </map>
+
+    <hr>
+
+    <p>웹페이지 제작 시 <em>웹표준</em>과 웹접근성을 준수합니다.</p>
+    <p>웹페이지 제작 시 <strong>웹표준</strong>과 <strong>웹접근성</strong>을 준수합니다.</p>
+    <p>웹페이지 제작 시 <mark>웹표준</mark>과 웹접근성을 준수합니다.</p>
+    <p><b><span>웹페이지</span></b> 제작 시 웹표준과 웹접근성을 준수합니다.</p>
+    <p><small>COPYRIGHT © All rights reserved.</small></p>
+    <p>물의 화학식은 H<sub>2</sub>O입니다.</p>
+    <p>100m<sup>2</sup></p>
+
+    <hr>
+
+    <ol>
+        <li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+    </ol>
+
+    <hr>
+
+    <ul>
+        <li><a href="#">메뉴1</a>
+            <ul>
+                <!--메뉴1의 서브메뉴-->
+                <li><a href="#">메뉴1_1</a></li>
+                <li><a href="#">메뉴1_2</a></li>
+                <li><a href="#">메뉴1_3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">메뉴2</a>
+            <ul>
+                <!--메뉴2의 서브메뉴-->
+                <li><a href="#">메뉴2_1</a></li>
+                <li><a href="#">메뉴2_2</a></li>
+                <li><a href="#">메뉴2_3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">메뉴3</a>
+            <ul>
+                <!--메뉴3의 서브메뉴-->
+                <li><a href="#">메뉴3_1</a></li>
+                <li><a href="#">메뉴3_2</a></li>
+                <li><a href="#">메뉴3_3</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    
 </body>
 
 </html>
