@@ -10,9 +10,23 @@ HTML, CSS, JavaScript, jQuery, React, Django
 
 # On the Internet
 
-## [노마드 코더 바닐라 자바스크립트](./바닐라%20자바스크립트%20Nomad%20Coder/README.md)
+## Nomad Coder
 
-유튜브 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr]
+### [바닐라 자바스크립트1](./Nomad%20Coder/바닐라%20자바스크립트/README.md)
+
+유튜브 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr](https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr)
+
+### [바닐라 자바스크립트2](./Nomad%20Coder/바닐라%20자바스크립트2/README.md)
+
+## 생활 코딩
+
+### [WEB1-HTML & Internet](./생활코딩/Web1-HTML&Internet/README.md)
+
+유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb]((https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb))
+
+### [WEB2-CSS](./생활코딩/Web2-CSS/README.md)
+
+유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B](https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B)
 
 # Sytle Guide
 
