@@ -1,5 +1,7 @@
 # 1. HTML5
 
+- [test.html](./test.html)
+
 ## 1.1 HTML5 기본 문서
 
 ### 1.1.1 HTML5 기본 구성
@@ -77,7 +79,7 @@
 <h6>반응형 웹사이트 제작6</h6>
 ```
 
-### 1.4.2 문단 `<p>`, `<pre>`
+### 1.4.2 문단 `<p>`, `<pre>`, `<br>`
 
 - `<p>`: 단락(paragraph)을 정의
 - `<br>`: 줄바꿈
@@ -269,49 +271,395 @@ HTML 문서의 소유자나 조직에 대한 연락처 정보를 정의할 때 �
 
 ## 1.7 표 관련 요소 및 속성
 
-### 1.7.1 표 생성
+### 1.7.1 표 생성 `<table>`, `<tr>`, `<td>`, `<th>`, `<thead>`, `<tbody>`, `<tfoot>`, `<colgroup>`
 
-- `<table>`: 
-- `<tr>`: 
-- `<td>`: 
-- `<th>`: 
-- `<thead>`: 
-- `<tbody>`: 
-- `<tfoot>`: 
-- `<colgroup>`: 
+`<table>`: 표 정의, 행과 열의 2차원 정보로 구성
+- 자식 요소로 반드시 `<tr>` 태그를 정의 해야 함
+- `<table>` -> `<tr>` -> `<td>` 로 마크업 해야함
+  - `<tr>`: `<table>` 태그의 자식 요소로 행을 정의
+  - `<td>`: `<tr>` 태그의 자식 요소로 열을 정의
+  - `<th>`: 태그는 제목 역할을 하는 셀을 정의(굵은 폰트로 중앙 정렬)
+  - `<thead>`: 제목
+  - `<tbody>`: 본문
+  - `<tfoot>`: 열의 요약
+
+```html
+<table>
+    <colgroup>
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>교과목</th>
+            <th>점수</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>HTML</th>
+            <td>93</td>
+        </tr>
+        <tr>
+            <th>CSS</th>
+            <td>92</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>평균</th>
+            <td>92.5</td>
+        </tr>
+    </tfoot>
+</table>
+```
+
+- `<colgroup>`: 열을 그룹화하기
+- `<col>`: 한 열을 가르킴
 
 ### 1.7.2 셀 합치기, colspan 속성, rowspan 속성
 
+`colspan` 속성: 합치기 될 열의 수 지정
+`rowspan` 속성: 합치기 될 행의 수 지정
+
+```html
+<table>
+    <tr>
+        <td colspan="3">1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td rowspan="2">1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+</table>
+```
+
 ### 1.7.3 표 접근성 `<caption>`, scope 속성
+
+`<caption>`: 표의 제목을 정의
+
+`<th>`: 제목 셀
+- `scope` 속성: 열이나 행의 제목을 정의
+
+위 두 경우 스크린 리더에서 잘 읽어준다.
 
 ## 1.8 폼 관련 요소 및 주요 속성
 
 ### 1.8.1 폼 `<form>`, `<fieldset>`
 
+`<form>`: 검색, 로그인, 회원가입 등에서 입력한 값들을 처리하는 프로그램으로 전송할 때 사용
+- `action` 속성: 작성한 값을 처리하는 프로그램의 주소(URL)을 지정
+- `method` 속성: 서식의 값들을 서버 프로그램에 어떤 방식으로 전달할 것인지 정의
+  - `get` 방식: 검색
+  - `post` 방식: 로그인, 회원가입 등 중요한 정보를 전송
+
+`<fieldset>`: 양식 요소들을 그룹화
+- `<legend>`: 그룹화 된 서식의 제목을 정의할 때, `<fieldset>` 자식 요소로 포함
+
+```html
+<form action="#" method="post">
+    <fieldset>
+        <legend>로그인</legend>
+        <p>ID : <input type="text"></p>
+        <p>PW : <input type="password"></p>
+    </fieldset>
+</form>
+```
+
 ### 1.8.2 한줄 입력 요소 `<input>`, `type` 속성
+
+`<input>`: 사용자로부터 데이터 값을 입력받기 위한 태그
+- `type` 속성: 다양한 폼 컨트롤 생성 가능, 아래는 속성 값들
+  - `text`, `password`, `search`, `email`, `tel`, `color`, `number`, `range`, `radio`, `checkbox`, `submit`, `reset`, `button`, `image`, `file`, `hidden`
+
+```html
+<form action="#" method="post">
+    <fieldset>
+        <legend>type 속성</legend>
+        <p>아이디 : <input type="text"></p>
+        <p>비밀번호 : <input type="password"></p>
+        <p>검색 : <input type="search"></p>
+        <p>이메일 : <input type="email"></p>
+        <p>전화번호 : <input type="tel"></p>
+        <p>컬러선택 : <input type="color"></p>
+        <p>수량 : <input type="number" min="1" max="10" value="1"></p>
+        <p>만족도 : <input type="range" min="1" max="10" value="1"></p>
+        <p>예<input type="radio" name="receive" checked="checked"> 아니오<input type="radio" name="receive"></p>
+        <p>html<input type="checkbox" checked="checked"> css<input type="checkbox"></p>
+        <p><input type="submit" value="전송"></p>
+        <p><input type="reset" value="취소"></p>
+        <p><input type="button" value="확인"></p>
+        <p><input type="image" src="images/bt.png" alt="전송"></p>
+        <p><input type="file"></p>
+    </fieldset>
+</form>
+```
 
 ### 1.8.3 여러 줄 입력 요소, 선택 요소 `<textarea>`, `<select>`
 
+`<textarea>`: 여러 줄 텍스트 입력상자 태그
+- `row` 속성: 행 수를 지정
+- `column` 속성: 열 수를 지정
+
+```html
+<form action="#" method="post">
+    <fieldset>
+        <legend>회원가입</legend>
+        <p>가입목적 :<br><textarea rows="5" cols="100"></textarea></p>
+        <p>전화번호 :
+            <select>
+                <option>지역번호</option>
+                <option selected="selected">02</option>
+                <option>031</option>
+                <option>044</option>
+            </select>
+            <input type="text">
+        </p>
+    </fieldset>
+</form>
+```
+
 ### 1.8.4 폼 접근성 label 속성
+
+`<label>`: `<input>`, `<textarea>`, `<select>`들에 대한 제목을 정의하는 태그
+- `for` 속성: 사용자 입력 태그의 제목으로 연결하기 위해서 `for 속성 값`과 `사용자 입력 태그의 id 속성 값`을 동일하게 정의해 사용
+
+`<label>` 태그를 이용하면 접근성 높은 폼 서식을 마크업 할 수 있음
+
+```html
+<h1>label 요소</h1>
+<form action="#" method="post">
+    <table>
+        <caption>회원가입 입력</caption>
+        <colgroup>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><label for="id">아이디</label></th>
+                <td><input type="text" id="id" title="아이디 입력"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="pw">비밀번호</label></th>
+                <td><input type="password" id="pw" title="비밀번호 입력"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="r_pw">비밀번호 재입력</label></th>
+                <td><input type="password" id="r_pw" title="비밀번호 재입력"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="email">이메일</label></th>
+                <td><input type="text" id="email" title="이메일아이디 입력">@<input type="text" title="이메일주소 입력"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="hp">핸드폰 번호</label></th>
+                <td>
+                    <select id="hp" title="휴대폰 앞자리 선택">
+                        <option>선택</option>
+                        <option>010</option>
+                        <option>011</option>
+                    </select>-
+                    <input type="text" title="휴대폰 번호 중간 4자리 입력">-
+                    <input type="text" title="휴대폰 번호 끝 4자리 입력">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div><input type="submit" value="회원가입"><input type="reset" value="취소"></div>
+</form>
+```
 
 ### 1.8.5 주요 입력 속성
 
-## 1.9 그룹 요소
+- `placeholder` 속성: 입력 내용에 대한 힌트를 제공
+
+```html
+<form>
+    <fieldset>
+        <legend>필드에 입력형식 힌트주기</legend>
+        <p><label for="id">아이디</label><input type="text" id="id" placeholder="아이디" title="아이디 입력"></p>
+        <p><label for="pw">비밀번호</label><input type="password" id="pw" placeholder="비밀번호" title="비밀번호 입력"></p>
+    </fieldset>
+</form>
+```
+
+- `required` 속성: 적용된 입력 요소에 내용이 비어 있을 경우 경고 메시지 표시
+
+```html
+<form action="#" method="post">
+    <fieldset>
+        <legend>필수입력 유효성 검사</legend>
+        <p><label for="id">* 아이디</label><input type="text" id="id" title="아이디 입력" required="required"></p>
+        <p><label for="pw">* 비밀번호</label><input type="password" id="pw" title="비밀번호 입력" required="required"></p>
+        <p><input type="submit" value="확인"></p>
+    </fieldset>
+</form>
+```
+
+- `autocomplete` 속성: 입력 요소에 자동완성 기능 여부를 on, off 값으로 설정해 주는 속성
+
+```html
+<form action="#" method="post">
+    <fieldset>
+        <legend>자동완성 기능</legend>
+        <p><label for="phone">전화번호</label><input type="tel" id="phone" autocomplete="off" title="전화번호 입력"></p>
+        <p><label for="email">이메일</label><input type="email" id="email" autocomplete="on" title="이메일 입력"></p>
+        <p><input type="submit" value="확인"></p>
+    </fieldset>
+</form>
+```
+
+- `pattern` 속성: 지정한 문자패턴(정규식)과 입력된 내용의 일치 여부를 판단
+
+```html
+<form action="#" method="post">
+    <fieldset>
+        <legend>정규식 속성</legend>
+        <p><label for="tel">휴대폰 번호</label><input type="tel" id="tel" pattern="\d{3}-\d{3,4}-\d{4}"
+                required="required" title="휴대폰 번호는 숫자 3자리-숫자 3자리에서 4자리-숫자 4자리 입력"></p>
+        <p><input type="submit" value="확인"></p>
+    </fieldset>
+</form>
+```
+
+- `multiple` 속성: 여러 개의 이메일을 ','로 입력하거나 파일 업로드 시 여러 개의 파일을 동시에 선택할 수 있도록 해주는 속성
+
+```html
+<form action="#" method="post">
+    <fieldset>
+        <legend>다중파일 선택</legend>
+        <p><label for="email">이메일</label><input type="email" id="email" multiple="multiple" title="이메일 입력"> <label
+                for="file">파일 찾기</label><input type="file" id="file" multiple="multiple"></p>
+    </fieldset>
+</form>
+```
+
+- `disabled` 속성: 요소를 사용할 수 없도록 비활성화 상태로 만들어 주는 속성
+- `readonly` 속성: 입력된 내용을 수정할 수 없도록 만들어 주는 속성
+
+```html
+<form>
+    <fieldset>
+        <legend>disabled 속성과 readonly 속성</legend>
+        <p><label for="identification">인증번호</label><input type="text" id="identification" title="인증번호 입력"><input
+                type="button" value="이전"><input type="button" value="다음" disabled="disabled"></p>
+        <p><label for="book">선택한 책</label><input type="text" id="book" value="반응형 웹" readonly="readonly"> <label
+                for="quantity">수량</label><input type="number" id="quantity" min="1" value="1" title="수량 입력"></p>
+    </fieldset>
+</form>
+```
+
+## 1.9 그룹 요소 `<div>`, `<span>`
+
+`<div>` 와 `<span>` 의 공통점
+- CSS를 손쉽게 적용하기 위해 사용
+- 태그 자체는 아무런 의미가 없음
+
+`<div>` 와 `<span>` 의 차이점 -> [링크](https://mainia.tistory.com/3289#:~:text=div%20%EB%8A%94%20%EC%A4%84%20%EB%B0%94%EA%BF%88%EC%9D%B4,%EC%9D%84%20%ED%86%B5%ED%95%B4%EC%84%9C%20%EC%9E%90%EC%84%B8%ED%9E%88%20%EC%95%8C%EC%95%84%20%EB%B3%B4%EA%B2%A0%EC%8A%B5%EB%8B%88%EB%8B%A4.)
 
 ### 1.9.1 `<div>`
 
+요소들을 그룹으로 정의하는 태그, 줄바꿈 기능o
+텍스트, 인라인 요소, 블록 레벨 요소를 모두 포함 가능
+
 ### 1.9.2 `<span>`
+
+인라인 요소들을 그룹으로 정의하는 태그, 줄바꿈 기능x
 
 ## 1.10 구조 관련 요소
 
-- `<header>`: 
-- `<section>`: 
-- `<footer>`: 
-- `<nav>`: 
-- `<article>`: 
-- `<aside>`: 
+- `<header>`: HTML 문서의 헤더 영역, 제목이나 내비게이션, 검색 등의 내용들을 포함
+- `<section>`: HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화, 섹션 주제에 대한 제목 요소를 포함하는 것이 좋음
+- `<footer>`: 푸터 영역을 의미하는 태그, 섹션 작성자나 저작권에 대한 정보나 관련된 문서의 링크를 포함
+- `<nav>`: HTML 문서의 메인 메뉴나 목차 등을 정의
+- `<article>`: HTMl 문서 내 독립적으로 배포, 재사용이 가능한 게시물, 뉴스 기사 등을 의미, 제목요소를 포함하는 것이 좋음
+- `<aside>`: 메인 콘텐츠와 직접적인 관련 없는 영역을 의미, HTML 문서의 사이트 메뉴나 광고 등의 영역으로 사용
 
-## 1.11 미디어 요소
+![구조화 예시](./구조화%20예시.png)
 
-- `<audio>`: 
-- `<video>`: 
+```html
+<header>
+    <h1><a href="#">반응형웹</a></h1>
+    <nav>
+        <ul>
+            <li><a href="#">MENU01</a></li>
+            <li><a href="#">MENU02</a></li>
+            <li><a href="#">MENU03</a></li>
+            <li><a href="#">MENU04</a></li>
+            <li><a href="#">MENU05</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="container">
+    <section>
+        <h2>콘텐츠 그룹01</h2>
+    </section>
+    <section>
+        <h2>콘텐츠 그룹02</h2>
+    </section>
+    <article>
+        <h2>주요기사</h2>
+    </article>
+    <aside>광고</aside>
+</div>
+<footer>
+    <address>경기도 부천시 오정구 삼정동 032)674-5685 icoxpub@naver.com</address>
+    <p>COPYRIGHT © All rights reserved.</p>
+</footer>
+```
+
+## 1.11 미디어 요소 `<audio>`, `<video>`, `<iframe>`
+
+### 1.11.1`<audio>`
+
+오디오를 삽입할 때 사용하는 태그, mp3, wav, ogg 형식 지원
+
+```html
+<audio controls>
+    <source src="media/applause.wav" type="audio/wav">
+    <source src="media/applause.ogg" type="audio/ogg">
+    <source src="media/applause.mp3" type="audio/mp3">
+</audio>
+```
+
+### 1.11.2 `<video>`
+
+동영상을 삽입할 때 사용하는 태그
+
+```html
+<video controls poster="images/sun.jpg" width="800" height="450">
+    <source src="media/sunrise.mp4" type="video/mp4">
+    <source src="media/sunrise.webm" type="video/webm">
+    <source src="media/sunrise.ogg" type="video/ogg">
+</video>
+```
+
+`<iframe>`: 유튜브에 올린 영상이나 다른 HTML 문서를 삽입하고 싶을 때
+
+- 특수문자 표시법 Entity Name
+  - `<`: `&lt;` 으로 표시
+  - `>`: `&gt;` 으로 표시
+
+```html
+<h1>html5 구조 요소들</h1>
+<p>&lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt; </p>
+<p><strong>html5 구조 요소를 이용한 마크업 예시</strong></p>
+<div>
+    <iframe src=" ex1-37.html" title="반응형웹" width="500" height="500"></iframe>
+</div>
+```
+
+# 끝 :smile:

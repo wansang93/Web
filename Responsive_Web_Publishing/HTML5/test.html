@@ -145,7 +145,275 @@
 
     <hr>
 
-    
+    <table>
+        <colgroup>
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>교과목</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>HTML</th>
+                <td>93</td>
+            </tr>
+            <tr>
+                <th>CSS</th>
+                <td>92</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>평균</th>
+                <td>92.5</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <table>
+        <tr>
+            <td colspan="3">1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>로그인</legend>
+            <p>ID : <input type="text"></p>
+            <p>PW : <input type="password"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>type 속성</legend>
+            <p>아이디 : <input type="text"></p>
+            <p>비밀번호 : <input type="password"></p>
+            <p>검색 : <input type="search"></p>
+            <p>이메일 : <input type="email"></p>
+            <p>전화번호 : <input type="tel"></p>
+            <p>컬러선택 : <input type="color"></p>
+            <p>수량 : <input type="number" min="1" max="10" value="1"></p>
+            <p>만족도 : <input type="range" min="1" max="10" value="1"></p>
+            <p>예<input type="radio" name="receive" checked="checked"> 아니오<input type="radio" name="receive"></p>
+            <p>html<input type="checkbox" checked="checked"> css<input type="checkbox"></p>
+            <p><input type="submit" value="전송"></p>
+            <p><input type="reset" value="취소"></p>
+            <p><input type="button" value="확인"></p>
+            <p><input type="image" src="images/bt.png" alt="전송"></p>
+            <p><input type="file"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>회원가입</legend>
+            <p>가입목적 :<br><textarea rows="5" cols="100"></textarea></p>
+            <p>전화번호 :
+                <select>
+                    <option>지역번호</option>
+                    <option selected="selected">02</option>
+                    <option>031</option>
+                    <option>044</option>
+                </select>
+                <input type="text">
+            </p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <h1>label 요소</h1>
+    <form action="#" method="post">
+        <table>
+            <caption>회원가입 입력</caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row"><label for="id">아이디</label></th>
+                    <td><input type="text" id="id" title="아이디 입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="pw">비밀번호</label></th>
+                    <td><input type="password" id="pw" title="비밀번호 입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="r_pw">비밀번호 재입력</label></th>
+                    <td><input type="password" id="r_pw" title="비밀번호 재입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="email">이메일</label></th>
+                    <td><input type="text" id="email" title="이메일아이디 입력">@<input type="text" title="이메일주소 입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="hp">핸드폰 번호</label></th>
+                    <td>
+                        <select id="hp" title="휴대폰 앞자리 선택">
+                            <option>선택</option>
+                            <option>010</option>
+                            <option>011</option>
+                        </select>-
+                        <input type="text" title="휴대폰 번호 중간 4자리 입력">-
+                        <input type="text" title="휴대폰 번호 끝 4자리 입력">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div><input type="submit" value="회원가입"><input type="reset" value="취소"></div>
+    </form>
+
+    <hr>
+
+    <form>
+        <fieldset>
+            <legend>필드에 입력형식 힌트주기</legend>
+            <p><label for="id">아이디</label><input type="text" id="id" placeholder="아이디" title="아이디 입력"></p>
+            <p><label for="pw">비밀번호</label><input type="password" id="pw" placeholder="비밀번호" title="비밀번호 입력"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>필수입력 유효성 검사</legend>
+            <p><label for="id">* 아이디</label><input type="text" id="id" title="아이디 입력" required="required"></p>
+            <p><label for="pw">* 비밀번호</label><input type="password" id="pw" title="비밀번호 입력" required="required"></p>
+            <p><input type="submit" value="확인"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>자동완성 기능</legend>
+            <p><label for="phone">전화번호</label><input type="tel" id="phone" autocomplete="off" title="전화번호 입력"></p>
+            <p><label for="email">이메일</label><input type="email" id="email" autocomplete="on" title="이메일 입력"></p>
+            <p><input type="submit" value="확인"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>정규식 속성</legend>
+            <p><label for="tel">휴대폰 번호</label><input type="tel" id="tel" pattern="\d{3}-\d{3,4}-\d{4}"
+                    required="required" title="휴대폰 번호는 숫자 3자리-숫자 3자리에서 4자리-숫자 4자리 입력"></p>
+            <p><input type="submit" value="확인"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>다중파일 선택</legend>
+            <p><label for="email">이메일</label><input type="email" id="email" multiple="multiple" title="이메일 입력"> <label
+                    for="file">파일 찾기</label><input type="file" id="file" multiple="multiple"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form>
+        <fieldset>
+            <legend>disabled 속성과 readonly 속성</legend>
+            <p><label for="identification">인증번호</label><input type="text" id="identification" title="인증번호 입력"><input
+                    type="button" value="이전"><input type="button" value="다음" disabled="disabled"></p>
+            <p><label for="book">선택한 책</label><input type="text" id="book" value="반응형 웹" readonly="readonly"> <label
+                    for="quantity">수량</label><input type="number" id="quantity" min="1" value="1" title="수량 입력"></p>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <header>
+        <h1><a href="#">반응형웹</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">MENU01</a></li>
+                <li><a href="#">MENU02</a></li>
+                <li><a href="#">MENU03</a></li>
+                <li><a href="#">MENU04</a></li>
+                <li><a href="#">MENU05</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <section>
+            <h2>콘텐츠 그룹01</h2>
+        </section>
+        <section>
+            <h2>콘텐츠 그룹02</h2>
+        </section>
+        <article>
+            <h2>주요기사</h2>
+        </article>
+        <aside>광고</aside>
+    </div>
+    <footer>
+        <address>경기도 부천시 오정구 삼정동 032)674-5685 icoxpub@naver.com</address>
+        <p>COPYRIGHT © All rights reserved.</p>
+    </footer>
+
+    <hr>
+
+    <audio controls>
+        <source src="media/applause.wav" type="audio/wav">
+        <source src="media/applause.ogg" type="audio/ogg">
+        <source src="media/applause.mp3" type="audio/mp3">
+    </audio>
+
+    <hr>
+
+    <video controls poster="images/sun.jpg" width="800" height="450">
+        <source src="media/sunrise.mp4" type="video/mp4">
+        <source src="media/sunrise.webm" type="video/webm">
+        <source src="media/sunrise.ogg" type="video/ogg">
+    </video>
+
+    <hr>
+
+    <h1>html5 구조 요소들</h1>
+    <p>&lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt; </p>
+    <p><strong>html5 구조 요소를 이용한 마크업 예시</strong></p>
+    <div>
+        <iframe src=" ex1-37.html" title="반응형웹" width="500" height="500"></iframe>
+    </div>
+
 </body>
 
 </html>
