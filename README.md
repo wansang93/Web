@@ -22,14 +22,16 @@ momentum 만들기 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR
 
 ## 생활 코딩
 
+초보자들에게 정말 좋은 사이트 같습니다. 강추
+
 ### [Web1-HTML & Internet](./생활코딩/Web1-HTML&Internet/README.md)
 
-유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb]((https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb))
+유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb](https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb)
 
 ### [Web2-CSS](./생활코딩/Web2-CSS/README.md)
 
-- CSS 강의(16강)유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B](https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B)
-- CSS 강의(61강)유튜브 링크 -> [https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62](https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62)
+- CSS 강의(16강) 유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B](https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B)
+- CSS 강의(61강) 유튜브 링크 -> [https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62](https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62)
 
 ### [Web2-JavaScript](./생활코딩/Web2-JavaScript/README.md)
 
@@ -42,7 +44,7 @@ momentum 만들기 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR
 ## React
 
 - 벨로퍼트와 함께하는 모던 리액트 배우기 링크 -> [https://react.vlpt.us/](https://react.vlpt.us/)
-- 노마드 코더 리액트 링크 -> [유튜브 강의](youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf)
+- 노마드 코더 리액트 링크 -> [(https://www.youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf)](youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf)
 
 # Sytle Guide
 
