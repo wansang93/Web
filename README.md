@@ -4,47 +4,36 @@ HTML, CSS, JavaScript, jQuery, React, Django
 
 # From books
 
-## [반응형 웹 실전 프로젝트 가이드](./Responsive_Web_Publishing/README.md)
+## [1. 모던 자바스크립트 입문](./모던%20자바스크립트%20입문/README.md)
 
-## [모던 자바스크립트 입문](./모던%20자바스크립트%20입문/README.md)
+## [2. 반응형 웹 실전 프로젝트 가이드](./Responsive_Web_Publishing/README.md)
 
 # On the Internet
 
-## Nomad Coder
-
-### [바닐라 자바스크립트1](./Nomad%20Coder/바닐라%20자바스크립트/README.md)
-
-momentum 만들기 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr](https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr)
-
-### [바닐라 자바스크립트2](./Nomad%20Coder/바닐라%20자바스크립트2/README.md)
-
-그림판 만들기 링크 -> [https://nomadcoders.co/javascript-for-beginners-2/lobby](https://nomadcoders.co/javascript-for-beginners-2/lobby)
-
-## 생활 코딩
+## 3. 생활 코딩
 
 초보자들에게 정말 좋은 사이트 같습니다. 강추
 
-### [Web1-HTML & Internet](./생활코딩/Web1-HTML&Internet/README.md)
+### [3-1. Web1-HTML & Internet](./생활코딩/Web1-HTML&Internet/README.md)
 
-유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb](https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb)
+### [3-2. Web2-CSS](./생활코딩/Web2-CSS/README.md)
 
-### [Web2-CSS](./생활코딩/Web2-CSS/README.md)
+### [3-3. Web2-JavaScript](./생활코딩/Web2-JavaScript/README.md)
 
-- CSS 강의(16강) 유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B](https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B)
-- CSS 강의(61강) 유튜브 링크 -> [https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62](https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62)
+### [3-4. React](./생활코딩/React/README.md)
 
-### [Web2-JavaScript](./생활코딩/Web2-JavaScript/README.md)
+## 4. Nomad Coder
 
-유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf](https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf)
+### [4-1. 바닐라 자바스크립트1 - Momentum](./Nomad%20Coder/바닐라%20자바스크립트/README.md)
 
-### [React](./생활코딩/React/README.md)
+### [4-2. 바닐라 자바스크립트2 - Painting](./Nomad%20Coder/바닐라%20자바스크립트2/README.md)
 
-유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMCRv6f8H9K5Xwsdyg4sFSdi](https://www.youtube.com/playlist?list=PLuHgQVnccGMCRv6f8H9K5Xwsdyg4sFSdi)
+## 5. React
 
-## React
-
+- 생활코딩 유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMCRv6f8H9K5Xwsdyg4sFSdi](https://www.youtube.com/playlist?list=PLuHgQVnccGMCRv6f8H9K5Xwsdyg4sFSdi)
 - 벨로퍼트와 함께하는 모던 리액트 배우기 링크 -> [https://react.vlpt.us/](https://react.vlpt.us/)
-- 노마드 코더 리액트 링크 -> [(https://www.youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf)](youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf)
+- 노마드 코더 React_Todo -> [https://programmers.co.kr/learn/courses/758#curriculum](https://programmers.co.kr/learn/courses/758#curriculum)
+- 노마드 코더 React_Movie -> [https://www.youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf](youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf)
 
 # Sytle Guide
 

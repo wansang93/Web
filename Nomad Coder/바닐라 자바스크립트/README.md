@@ -1,5 +1,7 @@
 # 바닐라 자바스크립트 Nomad Coder
 
+momentum 만들기 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr](https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr)
+
 ## 0. Introduction
 
 ### What is Vanilla JS?
@@ -36,4 +38,4 @@
 
 ## 3. Make my first JS app
 
-소스코드 주석 참고 -> [sourcecode]](./3장/)
+소스코드 주석 참고 -> [sourcecode](./3장/)

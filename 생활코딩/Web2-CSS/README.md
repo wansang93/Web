@@ -1,8 +1,11 @@
 # Web2-CSS
 
-## 16강 강의 [유튜브 링크](https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B)
+- CSS 강의(16강) 유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B](https://www.youtube.com/playlist?list=PLuHgQVnccGMAnWgUYiAW2cTzSBywFO75B)
+- CSS 강의(61강) 유튜브 링크 -> [https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62](https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62)
 
-- 2021-01-12 ~ 2021-01-13
+## 16강 강의
+
+- 2021-01-12 ~ 2021-01-13 Finished
 
 2배속 ~ 4배속으로 빠르게 들었습니다. 중요한 부분은 1배속으로 들으며 필기 요약해 봤습니다.
 

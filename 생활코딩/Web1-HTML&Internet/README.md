@@ -1,6 +1,8 @@
 # Web1-HTML&Internet
 
-- 2021-01-12 ~ 2021-01-12 Finish
+- 2021-01-12 ~ 2021-01-12 Finished
+
+유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb](https://www.youtube.com/playlist?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb)
 
 설명을 정말 잘해서 좋았습니다. 이런 강의를 알게 되어서 영광이였습니다.
 

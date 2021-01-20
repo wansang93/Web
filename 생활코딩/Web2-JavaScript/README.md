@@ -1,6 +1,8 @@
 # Web2-JavaScript
 
-- 21-01-16 ~ 21-01-16 Finish
+- 21-01-16 ~ 21-01-16 Finished
+
+유튜브 링크 -> [https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf](https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf)
 
 ## 1, 2. Introduction
 
