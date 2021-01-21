@@ -38,4 +38,6 @@ momentum 만들기 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR
 
 ## 3. Make my first JS app
 
-소스코드 주석 참고 -> [sourcecode](./3장/)
+### 소스코드 주석 참고 -> [sourcecode](./3장/)
+
+날씨 API 사이트(회원가입 필수) 링크 -> [https://openweathermap.org/api](https://openweathermap.org/api)

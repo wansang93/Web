@@ -32,11 +32,14 @@ body {
 }
 
 .bgImage {
+  /* 절댓값으로 왼쪽 위에서부터 100%로 */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  /* 제일 뒤에 넣기 */
   z-index: -1;
+  /* 깜빡이면서 넣기 */
   animation: fadeIn 0.5s linear;
 }
