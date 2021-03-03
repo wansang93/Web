@@ -1,5 +1,7 @@
 # 바닐라 자바스크립트 Nomad Coder
 
+- 2021-01-17, 2021-01-21 (2Days) Finished
+
 momentum 만들기 링크 -> [https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr](https://www.youtube.com/playlist?list=PLLUCyU7SBaR7tOMe-ySJ5Uu1UlEBznxTr)
 
 ## 0. Introduction
