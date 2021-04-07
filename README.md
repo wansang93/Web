@@ -35,6 +35,10 @@ HTML, CSS, JavaScript, jQuery, React, Django
 - 노마드 코더 React_Todo -> [https://programmers.co.kr/learn/courses/758#curriculum](https://programmers.co.kr/learn/courses/758#curriculum)
 - 노마드 코더 React_Movie -> [https://www.youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf](youtube.com/playlist?list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf)
 
+## 6. Django
+
+### [6-1. Django & React Full Stack Web App Tutorial](./Django/Django%20&%20React%20Tutorial/README.md)
+
 # Sytle Guide
 
 **스타일 가이드**를 지키면 코드의 **가독성**과 **유지성**이 올라갑니다.
