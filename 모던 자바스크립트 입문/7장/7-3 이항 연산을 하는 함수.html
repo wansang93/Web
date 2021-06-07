@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Caculate 2 numbers</title>
     <script>
-        window.onload = function() {
-                document.getElementById("button").onclick = function() {
-                var number1 = parseFloat(document.getElementById("number1").value);
-                var number2 = parseFloat(document.getElementById("number2").value);
-                var operator = document.getElementById("operator");
-                var result = document.getElementById("result");
-                switch(operator) {
-                    case "+": return number1 + number2;
-                    case "-": return number1 - number2;
-                    case "*": return number1 * number2;
-                    case "/": return number1 / number2;
-                    case "%": return number1 % number2;
-                    case "^": return Math.pow(number1, number2);
-                }
-            };
+        function binaryOperation(a, b, operator) {
+            switch (operator) {
+                case "+": return a + b;
+                case "-": return a - b;
+                case "*": return a * b;
+                case "/": return a / b;
+                case "%": return a % b;
+                case "^": return Math.pow(a, b);
+                default: return '연산 부호 중 +, -, *, /, %, ^ 를 입력해주세요'
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById("button").onclick = function () {
+            var number1 = parseFloat(document.getElementById("number1").value);
+            var number2 = parseFloat(document.getElementById("number2").value);
+            var operator = document.getElementById("operator").value;
+            var result = document.getElementById("result");
+
+            result.innerHTML = binaryOperation(number1, number2, operator)};
         };
     </script>
-</head>
-<body>
-    <p>첫번째 숫자를 입력하세요: <input type="number" id="number1"></p>
-    <p>두번째 숫자를 입력하세요: <input type="number" id="number2"></p>
-    <p>원하는 연산 부호를 입력하세요: <input type="text" id="operator"> (+, -, *, /, ^ 중 하나)</p>
-    <input type="button" id="button" value="check">
-</body>
+  </head>
+  <body>
+    <p>첫번째 숫자를 입력하세요: <input type="number" id="number1" /></p>
+    <p>두번째 숫자를 입력하세요: <input type="number" id="number2" /></p>
+    <p>
+      원하는 연산 부호를 입력하세요: <input type="text" id="operator" />
+    </p>
+    <p id="result">이곳에 결과가 표시 됩니다.</p>
+    <input type="button" id="button" value="check" />
+  </body>
 </html>
