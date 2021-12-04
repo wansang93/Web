@@ -14,7 +14,7 @@ ATOM을 사용했음 링크 -> [https://atom.io/](https://atom.io/)
 
 ## 무료 이미지 다운
 
-- Free Image Site -> [https://unsplash.com/](https://unsplash.com/)
+Free Image Site -> [https://unsplash.com/](https://unsplash.com/)
 
 ## Web Server 프로그램 설치
 
