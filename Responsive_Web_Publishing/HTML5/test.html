@@ -75,7 +75,7 @@
     <hr>
 
     <a href="http://icoxpublish.com" target="_blank">아이콕스</a>
-    <!--  -->
+    <!-- JS로 접근한다면 title을 적어서 웹 접근성을 높여줄 것! -->
     <a href="#" onclick="window.open( 'http://icoxpublish.com' ); return false" title="새 창">아이콕스</a>
 
     <hr>
@@ -88,12 +88,14 @@
 
     <img src="images/map.jpg" alt="웹도서관" usemap="#library">
     <map name="library">
-        <!-- rect(사각형): x1, y1, x2, y2
-    circle(원): x1, y1, 반지름
-    ploy(다각형): 각 꼬지점의 좌표값들 -->
+        <!--
+            rect(사각형): x1, y1, x2, y2
+            circle(원): x1, y1, 반지름
+            ploy(다각형): 각 꼬지점의 좌표값들
+        -->
         <area shape="rect" coords="48,10,290,132" href="#" alt="A관" target="_blank">
         <area shape="circle" coords="330,200,10" href="#" alt="B관" target="_blank">
-        <area shape="poly" coords="10,10,20,20,10,30" href="#" alt="B관" target="_blank">
+        <area shape="poly" coords="10,10,20,20,10,30" href="#" alt="C관" target="_blank">
     </map>
 
     <hr>
@@ -442,7 +444,7 @@
     <p>&lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt; </p>
     <p><strong>html5 구조 요소를 이용한 마크업 예시</strong></p>
     <div>
-        <iframe src=" ex1-37.html" title="반응형웹" width="500" height="500"></iframe>
+        <iframe src="구조화%20예시.png" title="반응형웹" width="660" height="720"></iframe>
     </div>
 
 </body>
