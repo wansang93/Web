@@ -20,9 +20,11 @@
 
 ## 💻On the Internet
 
-### ✅ Vue3 [Vue3 Tutorial](/Vue%20Tutorial/)
+### ✅ Vue3 [Vue3 Tutorial](./Vue%20Tutorial/)
 
-### ⭐ Dream Coding [쇼핑몰 미니게임 & 코드 리뷰](/Dream%20Coding/쇼핑몰%20미니게임%20%26%20코드%20리뷰)
+### ⭐ Dream Coding [자바스크립트 마스터리](./Dream%20Coding/자바스크립트%20마스터리)
+
+### ⭐ Dream Coding [쇼핑몰 미니게임 & 코드 리뷰](./Dream%20Coding/쇼핑몰%20미니게임%20%26%20코드%20리뷰)
 
 ### 📀 Nomad Coder [바닐라 자바스크립트2 - Painting](./Nomad%20Coder/바닐라%20자바스크립트2/)
 
