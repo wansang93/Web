@@ -69,7 +69,7 @@ console.log(123 / -0)  // -Infinity
 console.log(123 / 'text')  // NaN
 
 // 큰 수 끝에 n 붙이면 bigint로 적용
-let = bigInt = 1234567890123456789012345678901234567890n;
+let bigInt = 1234567890123456789012345678901234567890n;
 console.log(typeof bigInt);  // bigint
 ```
 
