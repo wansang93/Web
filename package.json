@@ -1,10 +1,16 @@
 {
   "scripts": {
     "start": "node test.js",
-    "dev": "nodemon test.js"
+    "dev": "nodemon test.js",
+    "build": "babel test.js -w -o build/test.js"
   },
   "dependencies": {
     "nodemon": "^2.0.20",
     "package.json": "^0.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2"
   }
 }
