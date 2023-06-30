@@ -418,7 +418,7 @@ console.log(myStr.slice(-2)); // d!
 
 ### 10-8. Date
 
-[MDN Date Link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+[Date MDN Link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 ## 11. Array
 
@@ -456,14 +456,192 @@ console.log(ret2); // 24
 
 ## 12. Iterable & Generator
 
-```js
+- Iterable 하다는건 순회가 가능함
 
+### 12-3. Iterator
+
+```js
+// 만드는 방법1
+const multiple = {
+  [Symbol.iterator]() {
+    const max = 10;
+    let num = 0;
+    return {
+      next() {
+        return { value: num++ * 2, done: num > max };
+      },
+    };
+  },
+};
+
+// 만드는 방법2(콜백 활용)
+function makeIterable(initV, maxV, callback) {
+  return {
+    [Symbol.iterator]() {
+      let num = initV;
+      return {
+        next() {
+          return { value: callback(num++), done: num > maxV };
+        },
+      };
+    },
+  };
+}
+
+const triple = makeIterable(0, 10, (n) => n * 3);
+const single = makeIterable(0, 10, (n) => n);
+```
+
+### 12-5. Generator
+
+```js
+// 1. Generator.prototype.next()
+function* getPage(list, pageSize = 1) {
+  for (let index = 0; index < list.length; index += pageSize) {
+    yield list.slice(index, index + pageSize);
+  }
+}
+
+const list = [1, 2, 3, 4, 5, 6, 7, 8]
+const page = getPage(list, 3); // Generator { }
+
+page.next(); // { value: [1, 2, 3], done: false }
+page.next(); // { value: [4, 5, 6], done: false }
+page.next(); // { value: [7, 8], done: false }
+page.next(); // { value: undefined, done: true }
+
+
+// 2. Generator.prototype.return()
+function* gen() {
+  yield 1;
+  try {
+    yield 2;
+    yield 3;
+  } finally {
+    yield 'cleanup';
+  }
+}
+
+const g1 = gen();
+g1.next(); // { value: 1, done: false }
+
+// Execution is suspended before the try...finally.
+g1.return('early return'); // { value: 'early return', done: true }
+
+const g2 = gen();
+g2.next(); // { value: 1, done: false }
+g2.next(); // { value: 2, done: false }
+
+// Execution is suspended within the try...finally.
+g2.return('early return'); // { value: 'cleanup', done: false }
+
+// The completion value is preserved
+g2.next(); // { value: 'early return', done: true }
+
+// Generator is in the completed state
+g2.return('not so early return'); // { value: 'not so early return', done: true }
+
+// 3. Generator.prototype.throw()
+function* gen() {
+  while (true) {
+    try {
+      yield 42;
+    } catch (e) {
+      console.log('Error caught!');
+    }
+  }
+}
+
+const g = gen();
+console.log(g.next()); // { value: 42, done: false }
+console.log(g.throw(new Error('Something went wrong')));
+// "Error caught!"
+// { value: 42, done: false }
+```
+
+### 12-6. Spread syntax
+
+- 모든 Iterable은 Spread 할 수 있어!
+
+[Spread syntax MDN 사이트 링크](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+```js
+// 1. Array
+const parts = ['shoulders', 'knees'];
+const lyrics = ['head', ...parts, 'and', 'toes'];
+//  ["head", "shoulders", "knees", "and", "toes"]
+
+// 2. Object
+const obj1 = { foo: 'aaa', x: 10 };
+const obj2 = { foo: 'zzz', y: 200 };
+
+const clonedObj = { ...obj1 };
+// { foo: "aaa", x: 10 }
+
+const mergedObj = { ...obj1, ...obj2 };
+// { foo: "zzz", x: 10, y: 200 }
+```
+
+### 12-7. Destructuring assignment
+
+[Destructuring assignment MDN 사이트 링크](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+```js
+const obj = { aa: 1, bb: { cc: 2 } };
+//prettier-ignore
+const { aa, bb: { cc: dd } } = obj;
+// Two variables are bound: `aa` and `dd`
+
+console.log(aa); // 1
+// console.log(bb); // error
+// console.log(cc); // error
+console.log(dd); // 2
+
+const [aaa = 1] = []; // aaa is 1
+const { bbb = 2 } = { bbb: undefined }; // bbb is 2
+const { ccc = 2 } = { ccc: null }; // ccc is null
+
+const { zb = console.log('hey') } = { zb: 50 }; // zb is 50
+// Does not log anything, because `zb` is defined and there's no need
+// to evaluate the default value.
+
+const wansang = { fullName: 'Wansang', age: 30, job: 'DevOps engineer' };
+const { fullName, age, job: occupation, sex = 'man' } = wansang;
+console.log(fullName, age, occupation, sex); // Wansang 30 DevOps engineer man
 ```
 
 ## 13. Map & Set
 
-```js
+### 13-3. Map
 
+Map과 Object의 큰 차이점(ChatGPT로 요약)
+
+- Map keys can be any value (object, primitive, etc.), while object keys must be strings or symbols.
+- Maps have a size property and provide iteration methods (such as "forEach", "entries", "keys", and "values"), while objects do not.
+- Maps are ordered, while object properties have no order.
+- You can use "delete" operator to remove elements from a Map, while for Objects you have to use "delete" operator and set the value to "undefined".
+- Map entries can be iterated in the order they were added, while object properties have no guaranteed order for iteration.
+- You can use "set" method to add or update elements in a Map, while for Objects you have to directly assign values to properties.
+- Maps have a "clear" method to remove all elements, while for Objects you have to manually set each property to "undefined".
+- You can use the "has" method to check if a key exists in a Map, while for Objects you have to use "in" operator or check if a property is undefined.
+
+### 13-6. Symbol
+
+```js
+const key1 = Symbol('key');
+const key2 = Symbol('key');
+console.log(key1 === key2); // false
+
+// 전역으로 Symbol 생성하기
+const k1 = Symbol.for('key');
+const k2 = Symbol.for('key');
+console.log(k1 === k2); // true
+
+// 전역으로 만들면 접근 가능
+const ob = { [k1]: 'hello', [Symbol('key')]: 1 };
+console.log(ob); // { [Symbol(key)]: 'hello', [Symbol(key)]: 1 }
+console.log(ob[k1]); // hello
+console.log(ob[Symbol('key')]); // undefined
 ```
 
 ## 14. Useful Operators
@@ -474,10 +652,14 @@ console.log(ret2); // 24
 
 ## 15. Comments, Error Handling, Modules
 
-주석은 필요한 경우에 작성
+### 15-1. Comments
+
+JSDoc 링크 <https://github.com/jsdoc/jsdoc>
 
 ```js
-// TODO(완상): XX 기능 구현하기
+//주석은 필요한 경우에 작성
+// TODO(완상): XX 구현하기
+// 뭘하는지X, Why, How를 작성
 
 /**
  * 주어진 두 인자를 더한 값을 반환함
@@ -487,5 +669,58 @@ console.log(ret2); // 24
  */
 function add2(a, b) {
   return a + b;
+}
+```
+
+### 15-2. Error Handling
+
+```js
+
+```
+
+### 15-4. Modules
+
+```js
+
+```
+
+## 16. Async
+
+## 17. Scope
+
+## 18. Prototype
+
+## 19. Closures
+
+## 20. This
+
+## 21. Babel
+
+Babel SetUp Link <https://babeljs.io/setup#installation>
+
+```bash
+# intsall
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+```
+
+babel.config.json example <https://babeljs.io/docs/en/usage#overview>
+
+```json
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "ie": "8",
+          "firefox": "12",
+          "chrome": "12",
+          "safari": "11.1"
+        },
+        "useBuiltIns": "usage",
+        "corejs": "3.6.5"
+      }
+    ]
+  ]
 }
 ```
