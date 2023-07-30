@@ -1,6 +1,6 @@
 # 자바스크립트 마스터리
 
-- 23-01-19 ~
+- 23-01-19 ~ 23-02-08(finished)
 
 ## 2. What is JS?
 
@@ -24,53 +24,53 @@
 
 1. 해당 루트 폴더에서 nodemon 설치
 
-    ```bash
-    npm install nodemon
-    ```
+   ```bash
+   npm install nodemon
+   ```
 
 2. `package.json`에서 `scripts` 부분 추가
 
-    ```json
-    {
-      "scripts": {
-        "start": "node start.js",
-        "dev": "nodemon start.js"
-      },
-      "dependencies": {
-        "nodemon": "^2.0.20"
-        }
-    }
-    ```
+   ```json
+   {
+     "scripts": {
+       "start": "node start.js",
+       "dev": "nodemon start.js"
+     },
+     "dependencies": {
+       "nodemon": "^2.0.20"
+     }
+   }
+   ```
 
 3. terminal에서
 
-    ```bash
-    # 1. package.json의 모듈들 설치
-    npm install
+   ```bash
+   # 1. package.json의 모듈들 설치
+   npm install
 
-    # 2. 실행
-    npm run dev
-    ```
+   # 2. 실행
+   npm run dev
+   ```
 
 ## 4. Everything About Variables
 
 ### 4-3. Naming
 
 - Base is CamelCase
-- UNICODE, Special Char ❌  (`_`, `$` 제외)
+- UNICODE, Special Char ❌ (`_`, `$` 제외)
 - 변수명 뒤 숫자로 구분 ❌ (ex. btn1, btn2)
 
 ### 4-4. Number
 
 ```js
-console.log(123)  // number
-console.log(123 / 0)  // Infinity
-console.log(123 / -0)  // -Infinity
-console.log(123 / 'text')  // NaN
+console.log(123); // number
+console.log(123 / 0); // Infinity
+console.log(123 / -0); // -Infinity
+console.log(123 / 'text'); // NaN
 
 // 큰 수 끝에 n 붙이면 bigint로 적용
 let bigInt = 1234567890123456789012345678901234567890n;
-console.log(typeof bigInt);  // bigint
+console.log(typeof bigInt); // bigint
 ```
 
 ### 4-5. Boolean
@@ -83,7 +83,7 @@ console.log(!!NaN);
 console.log(!!null);
 console.log(!!0);
 console.log(!!-0);
-console.log(!!"");
+console.log(!!'');
 
 // 나머지는 모두 true!
 ```
@@ -91,7 +91,7 @@ console.log(!!"");
 ### 4-7. Null & Undefined
 
 - undefined: 정해지지 않은 상태, type: undefined
-- null: 값이 비어있는 상태,  tyep: object
+- null: 값이 비어있는 상태, tyep: object
 
 ## 5. Operator
 
@@ -99,10 +99,10 @@ console.log(!!"");
 
 ```js
 // + 는 숫자가 아닌 타입을 숫자로 변환해 진리값 알 수 있음
-console.log(+null);  // 0
-console.log(+true);  // 1
-console.log(+undefined);  // NaN
-console.log(+'text');  // NaN
+console.log(+null); // 0
+console.log(+true); // 1
+console.log(+undefined); // NaN
+console.log(+'text'); // NaN
 ```
 
 ### 5-9. Equality operators
@@ -120,7 +120,7 @@ Conditional Statement, Loop Statement
 
 ```js
 let love = true;
-let emoji = love === true ? "❤️1" : "💔";
+let emoji = love === true ? '❤️1' : '💔';
 console.log(emoji);
 ```
 
@@ -130,19 +130,19 @@ console.log(emoji);
 // break를 사용하지 않는 경우
 let condition = 'okay';
 
-switch(condition) {
-    // 여러가지 값이 하나로 ㄱㄱ할 때
-    case 'okay':
-    case 'good':
-        text = '좋아';
-        break
-    case 'bad':
-        text = '나쁨';
-    default:
-        text = '몰라';
+switch (condition) {
+  // 여러가지 값이 하나로 ㄱㄱ할 때
+  case 'okay':
+  case 'good':
+    text = '좋아';
+    break;
+  case 'bad':
+    text = '나쁨';
+  default:
+    text = '몰라';
 }
 
-console.log(text)
+console.log(text);
 ```
 
 ## 7. Function
@@ -177,7 +177,7 @@ sum(10, 20, 30, 40);
 ```js
 // IIFE(Immediately-Invoked Fuction Expressions)
 (function test() {
-  console.log("test");
+  console.log('test');
 })();
 // 바로 실행됨
 ```
@@ -191,14 +191,15 @@ sum(10, 20, 30, 40);
 
 1. First-class object
 
-    함수가 일반 객체처럼 모든 연산이 가능한 것!  
-    함수의 매개변수로 전달, 함수의 리턴값, 할당 명령문, 동일 비교 대상 등 가능
+   함수가 일반 객체처럼 모든 연산이 가능한 것!  
+   함수의 매개변수로 전달, 함수의 리턴값, 할당 명령문, 동일 비교 대상 등 가능
 
 2. Higher-order function
 
-    아래 둘 중 하나를 만족하면 고차함수
-    - 인자로 함수를 받는 함수  
-    - 함수를 반환하는 함수를 고차함수  
+   아래 둘 중 하나를 만족하면 고차함수
+
+   - 인자로 함수를 받는 함수
+   - 함수를 반환하는 함수를 고차함수
 
 ```js
 const print = (v) => process.stdout.write(`${v} `);
@@ -213,16 +214,16 @@ const iterate = (max, action) => {
   console.log();
 };
 
-iterate(3, print);  // 0 1 2 3
-iterate(3, printDouble);  // 0 2 4 6
+iterate(3, print); // 0 1 2 3
+iterate(3, printDouble); // 0 2 4 6
 iterate(3, (v) => {
   process.stdout.write(`${v * 4} `);
-});  // 0 4 8 12
+}); // 0 4 8 12
 
 const time = 1;
 setTimeout(() => {
   console.log(`${time}초 뒤 실행된 함수입니다.`);
-}, time * 1000);  // 1초 뒤 실행된 함수입니다.
+}, time * 1000); // 1초 뒤 실행된 함수입니다.
 ```
 
 ## 8. Object
@@ -231,21 +232,21 @@ setTimeout(() => {
 
 ```js
 const object = {
-  key: "wansang",
+  key: 'wansang',
   101: 101,
-  [3]: "Wansang",
-  ["stringWithSquareBrackets"]: "SWSB",
-  "string 2": "2",
+  [3]: 'Wansang',
+  ['stringWithSquareBrackets']: 'SWSB',
+  'string 2': '2',
 };
 
 // dot notation(정적 접근)
 console.log(object.key); // wansang
 // bracket notation(동적 접근)
-console.log(object["key"]); // wansang
+console.log(object['key']); // wansang
 console.log(object[101]); // 101
 console.log(object[3]); // Wansang
 console.log(object.stringWithSquareBrackets); // SWSB
-console.log(object["string 2"]); // 2
+console.log(object['string 2']); // 2
 ```
 
 ### 8-4. Object Literals Using Object Property Shorthand
@@ -263,7 +264,7 @@ function makeObj(name, age) {
     age,
   };
 }
-console.log(makeObj("wansang", 30));
+console.log(makeObj('wansang', 30));
 //{ name: 'wansang', age: 30 }
 ```
 
@@ -279,8 +280,8 @@ function Heart(name, emoji) {
   };
 }
 
-const red_heart1 = new Heart("red_heart", "❤️");
-const orange_heart1 = new Heart("orange_heart", "🧡");
+const red_heart1 = new Heart('red_heart', '❤️');
+const orange_heart1 = new Heart('orange_heart', '🧡');
 
 red_heart1.display(); // red_heart: ❤️
 console.log(orange_heart1);
@@ -357,8 +358,8 @@ class FullTimeEmployee extends Employee {
   }
 }
 
-const test = new FullTimeEmployee("완상", "클라우드", 20);
-const test2 = new PartTimeEmployee("재민", "클라우드", 30);
+const test = new FullTimeEmployee('완상', '클라우드', 20);
+const test2 = new PartTimeEmployee('재민', '클라우드', 30);
 console.log(test.calculatePay()); // 200000
 console.log(test2.calculatePay()); // 240000
 ```
@@ -369,13 +370,13 @@ console.log(test2.calculatePay()); // 240000
 
 ```js
 // Chrome에서는 Windows 객체, Node에서는 현재 모듈
-globalThis
-isFinite(1) // true
-isFinite(Infinity) // false
-parseFloat("12.34") // 12.34
-parseInt("12.34") // 12
-encodeURI(MyURL) // 한글 주소 encode 하기
-decodeURI(MyURL) // encode된 주소 decode 하기
+globalThis;
+isFinite(1); // true
+isFinite(Infinity); // false
+parseFloat('12.34'); // 12.34
+parseInt('12.34'); // 12
+encodeURI(MyURL); // 한글 주소 encode 하기
+decodeURI(MyURL); // encode된 주소 decode 하기
 ```
 
 ### 10-5. Numbers
@@ -391,7 +392,7 @@ console.log(num1.toFixed()); // 1234
 // 숫자를 문자로
 console.log(num1.toString()); // 1234.12
 // 숫자를 해당 국가 문자로
-console.log(num1.toLocaleString("ar-XA")); // ١٬٢٣٤٫١٢
+console.log(num1.toLocaleString('ar-XA')); // ١٬٢٣٤٫١٢
 // 앞에서부터 원하는 자릿수까지 유효하도록 반올림
 console.log(num1.toPrecision(2)); // 1.2e+3
 console.log(num1.toPrecision(5)); // 1234.1
@@ -408,10 +409,10 @@ Number.EPSILON; // 입실론
 
 ```js
 // String
-myStr = "Hello World!";
+myStr = 'Hello World!';
 // 포함
-console.log(myStr.includes("Hello")); // true
-console.log(myStr.indexOf("ello")); // 1
+console.log(myStr.includes('Hello')); // true
+console.log(myStr.indexOf('ello')); // 1
 console.log(myStr.substring(0, 2)); // He
 console.log(myStr.slice(-2)); // d!
 ```
@@ -424,15 +425,15 @@ console.log(myStr.slice(-2)); // d!
 
 ```js
 // 맨 뒤 추가, 삭제
-myFruits.push("strawberry");
+myFruits.push('strawberry');
 myFruits.pop();
 
 // 맨 앞 추가, 제거
-myFruits.unshift("lemon");
+myFruits.unshift('lemon');
 myFruits.shift();
 
 // (특정 번째, 몇개 삭제, 다음 추가)
-myFruits.splice(1, 2, "peach", "banana", "apple");
+myFruits.splice(1, 2, 'peach', 'banana', 'apple');
 
 // 뒤에서 3번째부터 마지막까지 복사
 const newFruits = myFruits.slice(-3);
@@ -502,14 +503,13 @@ function* getPage(list, pageSize = 1) {
   }
 }
 
-const list = [1, 2, 3, 4, 5, 6, 7, 8]
+const list = [1, 2, 3, 4, 5, 6, 7, 8];
 const page = getPage(list, 3); // Generator { }
 
 page.next(); // { value: [1, 2, 3], done: false }
 page.next(); // { value: [4, 5, 6], done: false }
 page.next(); // { value: [7, 8], done: false }
 page.next(); // { value: undefined, done: true }
-
 
 // 2. Generator.prototype.return()
 function* gen() {
@@ -616,14 +616,14 @@ console.log(fullName, age, occupation, sex); // Wansang 30 DevOps engineer man
 
 Map과 Object의 큰 차이점(ChatGPT로 요약)
 
-- Map keys can be any value (object, primitive, etc.), while object keys must be strings or symbols.
-- Maps have a size property and provide iteration methods (such as "forEach", "entries", "keys", and "values"), while objects do not.
-- Maps are ordered, while object properties have no order.
-- You can use "delete" operator to remove elements from a Map, while for Objects you have to use "delete" operator and set the value to "undefined".
-- Map entries can be iterated in the order they were added, while object properties have no guaranteed order for iteration.
-- You can use "set" method to add or update elements in a Map, while for Objects you have to directly assign values to properties.
-- Maps have a "clear" method to remove all elements, while for Objects you have to manually set each property to "undefined".
-- You can use the "has" method to check if a key exists in a Map, while for Objects you have to use "in" operator or check if a property is undefined.
+|   diff    |        Map        |     Object      |
+| :-------: | :---------------: | :-------------: |
+|    Key    |     Any Value     | String, Symbols |
+| Iteration |        ⭕         |       ❌        |
+|  Ordered  |        ⭕         |       ❌        |
+|    Add    | `map.set('d', 2)` |   `obj.d = 1`   |
+|  Update   | `map.set('d', 2)` |   `obj.d = 2`   |
+|  Delete   | `map.delete('b')` | `delete obj.b`  |
 
 ### 13-6. Symbol
 
@@ -647,7 +647,18 @@ console.log(ob[Symbol('key')]); // undefined
 ## 14. Useful Operators
 
 ```js
+// 14-3. Optional Chaining Operator
+let bag = { item: { pencil: 2 } };
 
+// error if item or pencil is not defined
+const check = bag.item.pencil; // ❌
+const count = bag?.item?.pencil; // ⭕
+console.log(count);
+
+// 14-4. Nullish Coalescing Operator
+// null & undefined만 해당할 때(Falsy가 아님)
+const foo = null ?? 'default string';
+console.log(foo); // 'default string'
 ```
 
 ## 15. Comments, Error Handling, Modules
@@ -672,19 +683,39 @@ function add2(a, b) {
 }
 ```
 
-### 15-2. Error Handling
+### 15-2. Error Bubbling up, Propagating
 
-```js
-
-```
+Error는 전파되서 해결 가능한 곳에서 핸들링 가능
 
 ### 15-4. Modules
 
-```js
-
+```html
+<!-- src의 소스를 모듈로 가져옴 -->
+<script type="module" src="test.js"></script>
 ```
 
 ## 16. Async
+
+### 16-3. JavaScript Runtime Environment
+
+자바스크립트는 Single Thread, 하나의 싱글 컨텍스트 스택으로 구성
+
+자바스크립트는 기본적으로 동기적으로 실행
+
+그럼 어떻게 비동기로 실행하나요?
+
+런타임 환경(호스트 환경)에서 제공하는 다양한 API(Web API, Node API 등)로 비동기로 실행
+
+1. Call Stack에서 함수 실행
+2. 비동기로 작성된 Callback을 API로 전달
+3. 완료된 Callback 을 Task Queue로 전달
+4. Event Loop가 Task Queue와 Call Stack을 계속 감시
+5. Call Stack이 비어있고 Task Queue에 Callback이 있으면
+6. Call Stack으로 Callback 전달
+
+```js
+
+```
 
 ## 17. Scope
 
