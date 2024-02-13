@@ -1,8 +1,8 @@
 // Fetch the items from the JSON file
-function loadItems() {
-  return fetch('data/data.json')
-    .then(response => response.json())
-    .then(json => json.items);
+async function loadItems() {
+  const response = await fetch("data/data.json");
+  const json = await response.json();
+  return json.items;
 }
 
 // Creates HTML element from given item
