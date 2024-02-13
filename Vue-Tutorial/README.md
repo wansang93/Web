@@ -2,7 +2,23 @@
 
 - 2022.11.21 ~ 2023.06.30
 
-Tutorial 링크 -> [https://vuejs.org/tutorial](https://vuejs.org/tutorial)
+Tutorial 링크 -> <https://vuejs.org/tutorial>
+
+## Play-Ground 설정
+
+- Quick Start 링크 -> <https://vuejs.org/guide/quick-start.html>
+
+```bash
+# 인증서 무효화(회사 네트워크 문제)
+npm config set strict-ssl false
+
+# 현재 경로에 Vue 설치
+npm create vue@latest .
+
+# 다운로드 및 실행
+npm install
+npm run dev
+```
 
 ## 2. Declarative Rendering `{{ data }}`
 
@@ -40,11 +56,11 @@ message.value = 'Changed'
 
 ```vue
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 // 1. 속성변수에 html이나 css를 참고
-const titleClass1 = ref('title');
-const titleClass2 = ref('title2');
+const titleClass1 = ref('title')
+const titleClass2 = ref('title2')
 </script>
 
 <template>
@@ -55,11 +71,11 @@ const titleClass2 = ref('title2');
 
 <style>
 .title {
-  color: red;
+  color: red
 }
 
 .title2 {
-  background-color: pink;
+  background-color: pink
 }
 </style>
 
@@ -71,7 +87,7 @@ const titleClass2 = ref('title2');
 
 ```vue
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 // 1. 변경될 변수 선언하고
 const count1 = ref(0)
@@ -80,9 +96,9 @@ const count2 = ref(0)
 // 2. 함수 선언 해서 로직을 짜고
 function increment(num) {
   if (num === 1) {
-    count1.value++;
+    count1.value++
   } else if (num === 2) {
-    count2.value++;
+    count2.value++
   }
 }
 </script>
@@ -101,7 +117,7 @@ V-model은 양방향 바인딩
 
 ```vue
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 // 1. 변경될 text를 지정하고
 const mytext = ref('')
@@ -126,7 +142,7 @@ const myVue = ref('myClass')
 
 <style>
 .myClass {
-  color: red;
+  color: red
 }
 </style>
 
@@ -138,12 +154,12 @@ const myVue = ref('myClass')
 
 ```vue
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const awesome = ref(true)
 
 function toggle() {
-  awesome.value = !awesome.value;
+  awesome.value = !awesome.value
 }
 
 </script>
@@ -162,9 +178,9 @@ for문 사용법
 
 ```vue
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-let id = 0;
+let id = 0
 
 const newTodo = ref('')
 const todos = ref([
@@ -252,7 +268,7 @@ function removeTodo(todo) {
 
 <style>
 .done {
-  text-decoration: line-through;
+  text-decoration: line-through
 }
 </style>
 
