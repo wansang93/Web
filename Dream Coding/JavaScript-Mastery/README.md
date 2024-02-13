@@ -63,27 +63,27 @@
 ### 4-4. Number
 
 ```js
-console.log(123); // number
-console.log(123 / 0); // Infinity
-console.log(123 / -0); // -Infinity
-console.log(123 / 'text'); // NaN
+console.log(123) // number
+console.log(123 / 0) // Infinity
+console.log(123 / -0) // -Infinity
+console.log(123 / 'text') // NaN
 
 // 큰 수 끝에 n 붙이면 bigint로 적용
-let bigInt = 1234567890123456789012345678901234567890n;
-console.log(typeof bigInt); // bigint
+let bigInt = 1234567890123456789012345678901234567890n
+console.log(typeof bigInt) // bigint
 ```
 
 ### 4-5. Boolean
 
 ```js
 // false 값
-console.log(!!false);
-console.log(!!undefined);
-console.log(!!NaN);
-console.log(!!null);
-console.log(!!0);
-console.log(!!-0);
-console.log(!!"");
+console.log(!!false)
+console.log(!!undefined)
+console.log(!!NaN)
+console.log(!!null)
+console.log(!!0)
+console.log(!!-0)
+console.log(!!"")
 
 // 나머지는 모두 true!
 ```
@@ -119,10 +119,10 @@ console.log(!!"");
 
 ```js
 // + 는 숫자가 아닌 타입을 숫자로 변환해 진리값 알 수 있음
-console.log(+null); // 0
-console.log(+true); // 1
-console.log(+undefined); // NaN
-console.log(+'text'); // NaN
+console.log(+null) // 0
+console.log(+true) // 1
+console.log(+undefined) // NaN
+console.log(+'text') // NaN
 ```
 
 ### 5-9. Equality operators
@@ -139,30 +139,30 @@ Conditional Statement, Loop Statement
 ### 6-3. Ternary Operator
 
 ```js
-let love = true;
-let emoji = love === true ? '❤️1' : '💔';
-console.log(emoji);
+let love = true
+let emoji = love === true ? '❤️1' : '💔'
+console.log(emoji)
 ```
 
 ### 6-6. Switch
 
 ```js
 // break를 사용하지 않는 경우
-let condition = 'okay';
+let condition = 'okay'
 
 switch (condition) {
   // 여러가지 값이 하나로 ㄱㄱ할 때
   case 'okay':
   case 'good':
-    text = '좋아';
-    break;
+    text = '좋아'
+    break
   case 'bad':
-    text = '나쁨';
+    text = '나쁨'
   default:
-    text = '몰라';
+    text = '몰라'
 }
 
-console.log(text);
+console.log(text)
 ```
 
 ## 7. Function
@@ -178,16 +178,16 @@ JS의 parameters의 기본값은 `undefined`
 ```js
 function sum(a = 1, b = 2, ...numbers) {
   // Default Parameters(undefined일때만 default 적용)
-  console.log(arguments);
+  console.log(arguments)
   // Rest Parameters(나머지 인자는 ...numbers 에 들어감)
-  console.log(a, b, numbers);
+  console.log(a, b, numbers)
 }
 
-sum();
+sum()
 // [Arguments] {}
 // 1 2 []
 
-sum(10, 20, 30, 40);
+sum(10, 20, 30, 40)
 // [Arguments] { '0': 10, '1': 20, '2': 30, '3': 40 }
 // 10 20 [ 30, 40 ]
 ```
@@ -197,8 +197,8 @@ sum(10, 20, 30, 40);
 ```js
 // IIFE(Immediately-Invoked Fuction Expressions)
 (function test() {
-  console.log('test');
-})();
+  console.log('test')
+})()
 // 바로 실행됨
 ```
 
@@ -222,28 +222,28 @@ sum(10, 20, 30, 40);
    - 함수를 반환하는 함수를 고차함수
 
 ```js
-const print = (v) => process.stdout.write(`${v} `);
+const print = (v) => process.stdout.write(`${v} `)
 function printDouble(v) {
-  process.stdout.write(`${v * 2} `);
+  process.stdout.write(`${v * 2} `)
 }
 
 const iterate = (max, action) => {
-  for (let i = 0; i <= max; i++) {
-    action(i);
+  for (let i = 0 i <= max i++) {
+    action(i)
   }
-  console.log();
-};
+  console.log()
+}
 
-iterate(3, print); // 0 1 2 3
-iterate(3, printDouble); // 0 2 4 6
+iterate(3, print) // 0 1 2 3
+iterate(3, printDouble) // 0 2 4 6
 iterate(3, (v) => {
-  process.stdout.write(`${v * 4} `);
-}); // 0 4 8 12
+  process.stdout.write(`${v * 4} `)
+}) // 0 4 8 12
 
-const time = 1;
+const time = 1
 setTimeout(() => {
-  console.log(`${time}초 뒤 실행된 함수입니다.`);
-}, time * 1000); // 1초 뒤 실행된 함수입니다.
+  console.log(`${time}초 뒤 실행된 함수입니다.`)
+}, time * 1000) // 1초 뒤 실행된 함수입니다.
 ```
 
 ## 8. Object
@@ -257,34 +257,34 @@ const object = {
   [3]: 'Wansang',
   ['stringWithSquareBrackets']: 'SWSB',
   'string 2': '2',
-};
+}
 
 // dot notation(정적 접근)
-console.log(object.key); // wansang
+console.log(object.key) // wansang
 // bracket notation(동적 접근)
-console.log(object['key']); // wansang
-console.log(object[101]); // 101
-console.log(object[3]); // Wansang
-console.log(object.stringWithSquareBrackets); // SWSB
-console.log(object['string 2']); // 2
+console.log(object['key']) // wansang
+console.log(object[101]) // 101
+console.log(object[3]) // Wansang
+console.log(object.stringWithSquareBrackets) // SWSB
+console.log(object['string 2']) // 2
 ```
 
 ### 8-4. Object Literals Using Object Property Shorthand
 
 ```js
 // 8-4 객체 축약
-const a = 10;
-const b = 20;
-const coordinate = { a, b };
-console.log(coordinate); // { a: 10, b: 20 }
+const a = 10
+const b = 20
+const coordinate = { a, b }
+console.log(coordinate) // { a: 10, b: 20 }
 
 function makeObj(name, age) {
   return {
     name,
     age,
-  };
+  }
 }
-console.log(makeObj('wansang', 30));
+console.log(makeObj('wansang', 30))
 //{ name: 'wansang', age: 30 }
 ```
 
@@ -293,18 +293,18 @@ console.log(makeObj('wansang', 30));
 ```js
 // 생성자 함수 정의
 function Heart(name, emoji) {
-  this.name = name;
-  this.emoji = emoji;
+  this.name = name
+  this.emoji = emoji
   this.display = () => {
-    console.log(`${this.name}: ${this.emoji}`);
-  };
+    console.log(`${this.name}: ${this.emoji}`)
+  }
 }
 
-const red_heart1 = new Heart('red_heart', '❤️');
-const orange_heart1 = new Heart('orange_heart', '🧡');
+const red_heart1 = new Heart('red_heart', '❤️')
+const orange_heart1 = new Heart('orange_heart', '🧡')
 
-red_heart1.display(); // red_heart: ❤️
-console.log(orange_heart1);
+red_heart1.display() // red_heart: ❤️
+console.log(orange_heart1)
 // Heart {
 //   name: 'orange_heart',
 //   emoji: '🧡',
@@ -318,70 +318,70 @@ console.log(orange_heart1);
 // Class 연습1(Priviate, Getter, Setter)
 class Counter {
   // private 설정
-  #value;
+  #value
   constructor(startValue) {
     if (isNaN(startValue) || startValue < 0) {
-      this.#value = 1;
+      this.#value = 1
     } else {
-      this.#value = startValue;
+      this.#value = startValue
     }
   }
   // getter로 들고오기(변수명과 동일)
   get value() {
-    return this.#value;
+    return this.#value
   }
 
   // setter로 설정하기(변수명과 동일)
   set value(num) {
-    this.#value = num;
+    this.#value = num
   }
 
   // 메서드로 설정하기
   increment = () => {
-    this.#value++;
-  };
+    this.#value++
+  }
 }
 
-const counter = new Counter(0);
-counter.value = 3;
-console.log(counter.value); // 3
-counter.increment();
-console.log(counter.value); // 4
+const counter = new Counter(0)
+counter.value = 3
+console.log(counter.value) // 3
+counter.increment()
+console.log(counter.value) // 4
 
 // Class연습2(Inheritance)
 class Employee {
-  name;
-  part;
+  name
+  part
   constructor(name, part, hoursPerMonth, payRate) {
-    this.name = name;
-    this.part = part;
-    this.hoursPerMonth = hoursPerMonth;
-    this.payRate = payRate;
+    this.name = name
+    this.part = part
+    this.hoursPerMonth = hoursPerMonth
+    this.payRate = payRate
   }
 
   calculatePay() {
-    return this.hoursPerMonth * this.payRate;
+    return this.hoursPerMonth * this.payRate
   }
 }
 
 class PartTimeEmployee extends Employee {
-  static PAY_RATE = 8_000;
+  static PAY_RATE = 8_000
   constructor(name, part, hoursPerMonth) {
-    super(name, part, hoursPerMonth, PartTimeEmployee.PAY_RATE);
+    super(name, part, hoursPerMonth, PartTimeEmployee.PAY_RATE)
   }
 }
 
 class FullTimeEmployee extends Employee {
-  static PAY_RATE = 10_000;
+  static PAY_RATE = 10_000
   constructor(name, part, hoursPerMonth) {
-    super(name, part, hoursPerMonth, FullTimeEmployee.PAY_RATE);
+    super(name, part, hoursPerMonth, FullTimeEmployee.PAY_RATE)
   }
 }
 
-const test = new FullTimeEmployee('완상', '클라우드', 20);
-const test2 = new PartTimeEmployee('재민', '클라우드', 30);
-console.log(test.calculatePay()); // 200000
-console.log(test2.calculatePay()); // 240000
+const test = new FullTimeEmployee('완상', '클라우드', 20)
+const test2 = new PartTimeEmployee('재민', '클라우드', 30)
+console.log(test.calculatePay()) // 200000
+console.log(test2.calculatePay()) // 240000
 ```
 
 ## 10. Useful Objects(Built-in Objects)
@@ -402,39 +402,39 @@ decodeURI(MyURL) // encode된 주소 decode 하기
 ### 10-5. Numbers
 
 ```js
-const num1 = 1234.12;
+const num1 = 1234.12
 
-Number.NaN; // NaN
-Number.isNaN(num1); // False
+Number.NaN // NaN
+Number.isNaN(num1) // False
 
 // 숫자를 정수 문자로
-console.log(num1.toFixed()); // 1234
+console.log(num1.toFixed()) // 1234
 // 숫자를 문자로
-console.log(num1.toString()); // 1234.12
+console.log(num1.toString()) // 1234.12
 // 숫자를 해당 국가 문자로
-console.log(num1.toLocaleString('ar-XA')); // ١٬٢٣٤٫١٢
+console.log(num1.toLocaleString('ar-XA')) // ١٬٢٣٤٫١٢
 // 앞에서부터 원하는 자릿수까지 유효하도록 반올림
-console.log(num1.toPrecision(2)); // 1.2e+3
-console.log(num1.toPrecision(5)); // 1234.1
-console.log(num1.toPrecision(7)); // 1234.120
+console.log(num1.toPrecision(2)) // 1.2e+3
+console.log(num1.toPrecision(5)) // 1234.1
+console.log(num1.toPrecision(7)) // 1234.120
 // 지수 표기법
-console.log(num1.toExponential()); // 1.23412e+3
+console.log(num1.toExponential()) // 1.23412e+3
 
-Number.MAX_VALUE; // 최댓값
-Number.POSITIVE_INFINITY; // 무한대
-Number.EPSILON; // 입실론
+Number.MAX_VALUE // 최댓값
+Number.POSITIVE_INFINITY // 무한대
+Number.EPSILON // 입실론
 ```
 
 ### 10-7. Strings
 
 ```js
 // String
-myStr = 'Hello World!';
+myStr = 'Hello World!'
 // 포함
-console.log(myStr.includes('Hello')); // true
-console.log(myStr.indexOf('ello')); // 1
-console.log(myStr.substring(0, 2)); // He
-console.log(myStr.slice(-2)); // d!
+console.log(myStr.includes('Hello')) // true
+console.log(myStr.indexOf('ello')) // 1
+console.log(myStr.substring(0, 2)) // He
+console.log(myStr.slice(-2)) // d!
 ```
 
 ### 10-8. Date
@@ -445,40 +445,40 @@ console.log(myStr.slice(-2)); // d!
 
 ```js
 // 맨 뒤 추가, 삭제
-myFruits.push('strawberry');
-myFruits.pop();
+myFruits.push('strawberry')
+myFruits.pop()
 
 // 맨 앞 추가, 제거
-myFruits.unshift('lemon');
-myFruits.shift();
+myFruits.unshift('lemon')
+myFruits.shift()
 
 // (특정 번째, 몇개 삭제, 다음 추가)
 // ex) 1번째에 2개 삭제하고 1번째 이후로 3개 추가
-myFruits.splice(1, 2, 'peach', 'banana', 'apple');
+myFruits.splice(1, 2, 'peach', 'banana', 'apple')
 
 // 뒤에서 3번째부터 마지막까지 복사
-const newFruits = myFruits.slice(-3);
+const newFruits = myFruits.slice(-3)
 
-const nums = [3, 16, 5, 25, 4, 34, 21];
+const nums = [3, 16, 5, 25, 4, 34, 21]
 
 // 정렬
-nums.sort((a, b) => a - b);
-console.log(nums); // [3, 4, 5, 16, 21, 25, 34]
+nums.sort((a, b) => a - b)
+console.log(nums) // [3, 4, 5, 16, 21, 25, 34]
 
 // reduce(함수, 초깃값)는 차원을 줄임
 // ex) reduce((누적, 값) => 실행할 함수, 초깃값)
-const acc_sum = nums.reduce((sum, v) => sum + v, 0);
-console.log(acc_sum); // 108
+const acc_sum = nums.reduce((sum, v) => sum + v, 0)
+console.log(acc_sum) // 108
 
-const arrays = [[1, 2], [3, 4], [5, 6]];
-const flat = arrays.reduce((acc, array) => acc.concat(array), []);
-console.log(flat); // [1, 2, 3, 4, 5, 6]
+const arrays = [[1, 2], [3, 4], [5, 6]]
+const flat = arrays.reduce((acc, array) => acc.concat(array), [])
+console.log(flat) // [1, 2, 3, 4, 5, 6]
 
 // 5보다 큰 수들의 평균
 const ret2 = nums
   .filter((v) => v > 5)
-  .reduce((avg, num, _, arr) => avg + num / arr.length, 0);
-console.log(ret2); // 24
+  .reduce((avg, num, _, arr) => avg + num / arr.length, 0)
+console.log(ret2) // 24
 ```
 
 ## 12. Iterable & Generator
@@ -491,32 +491,32 @@ console.log(ret2); // 24
 // 만드는 방법1
 const multiple = {
   [Symbol.iterator]() {
-    const max = 10;
-    let num = 0;
+    const max = 10
+    let num = 0
     return {
       next() {
-        return { value: num++ * 2, done: num > max };
+        return { value: num++ * 2, done: num > max }
       },
-    };
+    }
   },
-};
+}
 
 // 만드는 방법2(콜백 활용)
 function makeIterable(initV, maxV, callback) {
   return {
     [Symbol.iterator]() {
-      let num = initV;
+      let num = initV
       return {
         next() {
-          return { value: callback(num++), done: num > maxV };
+          return { value: callback(num++), done: num > maxV }
         },
-      };
+      }
     },
-  };
+  }
 }
 
-const triple = makeIterable(0, 10, (n) => n * 3);
-const single = makeIterable(0, 10, (n) => n);
+const triple = makeIterable(0, 10, (n) => n * 3)
+const single = makeIterable(0, 10, (n) => n)
 ```
 
 ### 12-5. Generator
@@ -524,63 +524,63 @@ const single = makeIterable(0, 10, (n) => n);
 ```js
 // 1. Generator.prototype.next()
 function* getPage(list, pageSize = 1) {
-  for (let index = 0; index < list.length; index += pageSize) {
-    yield list.slice(index, index + pageSize);
+  for (let index = 0 index < list.length index += pageSize) {
+    yield list.slice(index, index + pageSize)
   }
 }
 
 const list = [1, 2, 3, 4, 5, 6, 7, 8]
-const page = getPage(list, 3); // Generator { }
+const page = getPage(list, 3) // Generator { }
 
-page.next(); // { value: [1, 2, 3], done: false }
-page.next(); // { value: [4, 5, 6], done: false }
-page.next(); // { value: [7, 8], done: false }
-page.next(); // { value: undefined, done: true }
+page.next() // { value: [1, 2, 3], done: false }
+page.next() // { value: [4, 5, 6], done: false }
+page.next() // { value: [7, 8], done: false }
+page.next() // { value: undefined, done: true }
 
 // 2. Generator.prototype.return()
 function* gen() {
-  yield 1;
+  yield 1
   try {
-    yield 2;
-    yield 3;
+    yield 2
+    yield 3
   } finally {
-    yield 'cleanup';
+    yield 'cleanup'
   }
 }
 
-const g1 = gen();
-g1.next(); // { value: 1, done: false }
+const g1 = gen()
+g1.next() // { value: 1, done: false }
 
 // Execution is suspended before the try...finally.
-g1.return('early return'); // { value: 'early return', done: true }
+g1.return('early return') // { value: 'early return', done: true }
 
-const g2 = gen();
-g2.next(); // { value: 1, done: false }
-g2.next(); // { value: 2, done: false }
+const g2 = gen()
+g2.next() // { value: 1, done: false }
+g2.next() // { value: 2, done: false }
 
 // Execution is suspended within the try...finally.
-g2.return('early return'); // { value: 'cleanup', done: false }
+g2.return('early return') // { value: 'cleanup', done: false }
 
 // The completion value is preserved
-g2.next(); // { value: 'early return', done: true }
+g2.next() // { value: 'early return', done: true }
 
 // Generator is in the completed state
-g2.return('not so early return'); // { value: 'not so early return', done: true }
+g2.return('not so early return') // { value: 'not so early return', done: true }
 
 // 3. Generator.prototype.throw()
 function* gen() {
   while (true) {
     try {
-      yield 42;
+      yield 42
     } catch (e) {
-      console.log('Error caught!');
+      console.log('Error caught!')
     }
   }
 }
 
-const g = gen();
-console.log(g.next()); // { value: 42, done: false }
-console.log(g.throw(new Error('Something went wrong')));
+const g = gen()
+console.log(g.next()) // { value: 42, done: false }
+console.log(g.throw(new Error('Something went wrong')))
 // "Error caught!"
 // { value: 42, done: false }
 ```
@@ -593,18 +593,18 @@ console.log(g.throw(new Error('Something went wrong')));
 
 ```js
 // 1. Array
-const parts = ['shoulders', 'knees'];
-const lyrics = ['head', ...parts, 'and', 'toes'];
+const parts = ['shoulders', 'knees']
+const lyrics = ['head', ...parts, 'and', 'toes']
 //  ["head", "shoulders", "knees", "and", "toes"]
 
 // 2. Object
-const obj1 = { foo: 'aaa', x: 10 };
-const obj2 = { foo: 'zzz', y: 200 };
+const obj1 = { foo: 'aaa', x: 10 }
+const obj2 = { foo: 'zzz', y: 200 }
 
-const clonedObj = { ...obj1 };
+const clonedObj = { ...obj1 }
 // { foo: "aaa", x: 10 }
 
-const mergedObj = { ...obj1, ...obj2 };
+const mergedObj = { ...obj1, ...obj2 }
 // { foo: "zzz", x: 10, y: 200 }
 ```
 
@@ -613,27 +613,27 @@ const mergedObj = { ...obj1, ...obj2 };
 [Destructuring assignment MDN 사이트 링크](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 ```js
-const obj = { aa: 1, bb: { cc: 2 } };
+const obj = { aa: 1, bb: { cc: 2 } }
 //prettier-ignore
-const { aa, bb: { cc: dd } } = obj;
+const { aa, bb: { cc: dd } } = obj
 // Two variables are bound: `aa` and `dd`
 
-console.log(aa); // 1
-// console.log(bb); // error
-// console.log(cc); // error
-console.log(dd); // 2
+console.log(aa) // 1
+// console.log(bb) // error
+// console.log(cc) // error
+console.log(dd) // 2
 
-const [aaa = 1] = []; // aaa is 1
-const { bbb = 2 } = { bbb: undefined }; // bbb is 2
-const { ccc = 2 } = { ccc: null }; // ccc is null
+const [aaa = 1] = [] // aaa is 1
+const { bbb = 2 } = { bbb: undefined } // bbb is 2
+const { ccc = 2 } = { ccc: null } // ccc is null
 
-const { zb = console.log('hey') } = { zb: 50 }; // zb is 50
+const { zb = console.log('hey') } = { zb: 50 } // zb is 50
 // Does not log anything, because `zb` is defined and there's no need
 // to evaluate the default value.
 
-const wansang = { fullName: 'Wansang', age: 30, job: 'DevOps engineer' };
-const { fullName, age, job: occupation, sex = 'man' } = wansang;
-console.log(fullName, age, occupation, sex); // Wansang 30 DevOps engineer man
+const wansang = { fullName: 'Wansang', age: 30, job: 'DevOps engineer' }
+const { fullName, age, job: occupation, sex = 'man' } = wansang
+console.log(fullName, age, occupation, sex) // Wansang 30 DevOps engineer man
 ```
 
 ## 13. Map & Set
@@ -663,20 +663,20 @@ Map과 Object의 큰 차이점(ChatGPT로 요약)
 ### 13-6. Symbol
 
 ```js
-const key1 = Symbol('key');
-const key2 = Symbol('key');
-console.log(key1 === key2); // false
+const key1 = Symbol('key')
+const key2 = Symbol('key')
+console.log(key1 === key2) // false
 
 // 전역으로 Symbol 생성하기
-const k1 = Symbol.for('key');
-const k2 = Symbol.for('key');
-console.log(k1 === k2); // true
+const k1 = Symbol.for('key')
+const k2 = Symbol.for('key')
+console.log(k1 === k2) // true
 
 // 전역으로 만들면 접근 가능
-const ob = { [k1]: 'hello', [Symbol('key')]: 1 };
-console.log(ob); // { [Symbol(key)]: 'hello', [Symbol(key)]: 1 }
-console.log(ob[k1]); // hello
-console.log(ob[Symbol('key')]); // undefined
+const ob = { [k1]: 'hello', [Symbol('key')]: 1 }
+console.log(ob) // { [Symbol(key)]: 'hello', [Symbol(key)]: 1 }
+console.log(ob[k1]) // hello
+console.log(ob[Symbol('key')]) // undefined
 ```
 
 ## 14. Useful Operators
@@ -691,17 +691,17 @@ console.log(ob[Symbol('key')]); // undefined
 
 ```js
 // 14-3. Optional Chaining Operator
-let bag = { item: { pencil: 2 } };
+let bag = { item: { pencil: 2 } }
 
 // error if item or pencil is not defined
-const check = bag.item.pencil; // ❌
-const count = bag?.item?.pencil; // ⭕
-console.log(count);
+const check = bag.item.pencil // ❌
+const count = bag?.item?.pencil // ⭕
+console.log(count)
 
 // 14-4. Nullish Coalescing Operator
 // null & undefined만 해당할 때(Falsy가 아님)
-const foo = null ?? 'default string';
-console.log(foo); // 'default string'
+const foo = null ?? 'default string'
+console.log(foo) // 'default string'
 ```
 
 ## 15. Comments, Error Handling, Modules
@@ -722,7 +722,7 @@ JSDoc 링크 <https://github.com/jsdoc/jsdoc>
  * @returns a와 b를 더한 값
  */
 function add2(a, b) {
-  return a + b;
+  return a + b
 }
 ```
 
